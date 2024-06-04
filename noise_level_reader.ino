@@ -25,8 +25,8 @@ const int yellowPin = 6;
 const int envelope = A0;
 
 // Classroom sound level
-const int minAvgRoomNoise = 10; // 30;
-const int maxAvgRoomNoise = 20; //50;
+const int minAvgRoomNoise = 30;
+const int maxAvgRoomNoise = 50;
 
 // Time for the LED Pin
 unsigned long startTimeStamp = 0;
