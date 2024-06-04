@@ -28,11 +28,6 @@ const int envelope = A0;
 const int minAvgRoomNoise = 30;
 const int maxAvgRoomNoise = 50;
 
-// Time for the LED Pin
-unsigned long startTimeStamp = 0;
-unsigned long currentTimeStamp = 0;
-unsigned int interval = 5000;
-
 // Amplitude variable for storing the measured noise amount
 int amplitude = 0;
 
@@ -58,8 +53,10 @@ void loop() {
 
   // if the amplitude is greater than the threshold
   if (amplitude >= minAvgRoomNoise && amplitude <= maxAvgRoomNoise) {
+    offLED(yellowPin, redPin_1, redPin_2);
     onLED(yellowPin, redPin_2);   
   } else if (amplitude > maxAvgRoomNoise) {
+    offLED(yellowPin, redPin_1, redPin_2);
     onLED(redPin_1, redPin_2);
   }
   else {
